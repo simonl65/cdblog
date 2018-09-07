@@ -36,9 +36,6 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        // Create a new blog post using the request data:
-        $post = new Post;
-
         // Save post to database:
         Post::create( request( ['title', 'body'] ) );
 
