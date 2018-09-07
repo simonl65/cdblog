@@ -14,10 +14,15 @@ class TasksController extends Controller
     }
 
 
-    public function show($id)
+/*     public function show($id)
     {
         $task = Task::find($id);
 
+        return view('tasks.show', compact('task'));
+    }
+ */
+    public function show(Task $task)
+    {
         return view('tasks.show', compact('task'));
     }
 }
