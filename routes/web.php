@@ -1,8 +1,10 @@
 <?php
 
-Route::get('/', 'HomeController@index');
+// Route::get('/', 'HomeController@index');
+Route::get('/', 'PostsController@index');
+Route::get('/posts/{post}', 'PostsController@show');
 
-Route::get('/about', 'AboytController@index');
+Route::get('/about', 'AboutController@index');
 
 Route::get('/tasks', 'TasksController@index');
 
