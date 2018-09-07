@@ -8,7 +8,9 @@
 </head>
 <body>
 
-    <h1>Hey, welcome!</h1>
+    <h1>Hey, welcome {{$name}}!</h1>
+    <p class="lead">Are you <i>really</i> {{$age}}?</p>
+    <a href="/tasks" class="btn btn-primary">See tasks</a>
 
 </body>
 </html>

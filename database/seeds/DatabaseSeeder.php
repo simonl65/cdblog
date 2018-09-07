@@ -27,5 +27,8 @@ class DatabaseSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+        DB::table('tasks')->insert([
+            'body' => 'Learn VueJS'
+        ]);
     }
 }

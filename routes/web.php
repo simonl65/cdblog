@@ -13,20 +13,9 @@ use App\Task;
 */
 
 Route::get('/', function () {
-
-    $tasks = DB::table('tasks')->get();
-
-    return view('welcome', compact('tasks'));
-
-    /*
-    ...or
-        return view('welcome')->with('name','Simon');
-
-    ...or
-        $name = "Simon";
-        $age = 21;
-        return view('welcome', compact('name', 'age'));
-    */
+    $name = "Simon";
+    $age = 21;
+    return view('welcome', compact('name', 'age'));
 });
 
 
@@ -35,21 +24,7 @@ Route::get('/about', function(){
 });
 
 
-Route::get('/tasks', function () {
-
-    // $tasks = DB::table('tasks')->get();
-    // $tasks = App\Task::all();
-    $tasks = Task::all();
-
-    return view('tasks.index', compact('tasks'));
-});
+Route::get('/tasks', 'TasksController@index');
 
 
-Route::get('/tasks/{task}', function($id){
-
-    // $task = DB::table('tasks')->find($id);
-    // $task = App\Task::find($id);
-    $task = Task::find($id);
-
-    return view('tasks.show', compact('task'));
-});
+Route::get('/tasks/{task}', 'TasksController@show');

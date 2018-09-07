@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <a href="/" class="btn btn-primamry">Home</a>
     <ul>
         @foreach ($tasks as $task)
             <li><a href="/tasks/{{$task->id}}">{{$task->body}}</a></li>
