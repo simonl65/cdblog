@@ -4,6 +4,8 @@
 
 <h1>Create a Post</h1>
 
+@include('partials.errors')
+
 <form method="POST" action="/posts">
 
     {{ csrf_field() }}
@@ -19,6 +21,12 @@
         <textarea class="form-control" id="body" name="body" rows="10"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary">Publish</button>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Publish</button>
+    </div>
+
+    <div class="form-group">
+    </div>
 </form>
+
 @endsection
