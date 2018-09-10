@@ -39,7 +39,7 @@
         </div><!-- /.row -->
     </main><!-- /.container -->
 
-    <footer class="blog-footer">
+    <footer class="blog-footer mt-4">
         @include('partials.footer')
     </footer>
 
