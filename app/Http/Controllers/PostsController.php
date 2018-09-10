@@ -12,15 +12,18 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('index');
+        // Render any existing blog posts:
+        $posts = Post::latest()->get();
+        return view('index', compact('posts'));
     }
 
     /**
      * GET /posts/id
      */
-    public function show()
+    public function show($id)
     {
-        return view('posts.show');
+        $post = Post::find($id);
+        return view('posts.show', compact('post'));
     }
 
     /**
