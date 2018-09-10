@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <h1>{{ $post->title }}</h1>
-{{ $post->body }}
+{!! $post->body !!}
 
 <hr> {{-- Show any comments --}}
 <h3 class="muted">Comments:</h3>
@@ -22,7 +22,7 @@
 
 {{-- Show comments form --}}
 <hr>
-    @include('partials.errors')
+@include('partials.errors')
 
 <form method="POST" action="/posts/{{ $post->id }}/comments">
     {{ csrf_field() }}
