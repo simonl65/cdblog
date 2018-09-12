@@ -13,3 +13,7 @@ Route::get('/about',        'AboutController@index');
 
 Route::get('/tasks',        'TasksController@index');
 Route::get('/tasks/{task}', 'TasksController@show');
+
+
+Route::get('/register', 'RegistrationController@create');
+Route::get('/login', 'SessionController@create');
