@@ -23,7 +23,21 @@
     <nav class="nav d-flex justify-content-between">
         <a class="p-2 text-muted" href="/">Home</a>
         <a class="p-2 text-muted" href="/posts">Posts</a>
-        <a class="p-2 text-muted" href="/posts/create">Create a Post</a>
+
+        @if( Auth::check() )
+            <a class="p-2 text-muted" href="/posts/create">Create a Post</a>
+        @endif
+
         <a class="p-2 text-muted" href="/about">About</a>
+
+        <div class="p-2 ml-auto">
+            @if( Auth::check() )
+                <span class="text-white-50">({{ Auth::user()->name }}) </span>
+                &nbsp;<a href="/logout">Logout</a>
+            @else
+                <a class="text-muted" href="/register">Register</a>
+                | &nbsp;<a class="text-muted" href="/login">Sign In</a>
+            @endif
+        </div>
     </nav>
 </div>

@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Blog Template for Bootstrap</title>
+    <title>Simon's Blog</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -22,11 +22,7 @@
 <body>
 
     <div id="page_header" class="container">
-
-        @include('partials.header')
-
-        @yield('jumbotron')
-        @yield('featuredPosts')
+    @include('partials.header') @yield('jumbotron') @yield('featuredPosts')
 
     </div>
 
@@ -35,12 +31,14 @@
             <div class="col-md-8 blog-main">
                 @yield('content')
             </div>
-            @include('partials.sidebar')
-        </div><!-- /.row -->
-    </main><!-- /.container -->
+    @include('partials.sidebar')
+        </div>
+        <!-- /.row -->
+    </main>
+    <!-- /.container -->
 
     <footer class="blog-footer mt-4">
-        @include('partials.footer')
+    @include('partials.footer')
     </footer>
 
     <!-- Bootstrap core JavaScript
