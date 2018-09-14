@@ -51,4 +51,22 @@ class Post extends Model
             $query->whereYear('created_at', $year);
         }
     }
+
+
+    /**
+     * Grab the archives data:
+     */
+    public static function Archives()
+    {
+        return static::selectRaw
+        (
+            'year(created_at) as year,
+            monthname(created_at) as month,
+            count(*) as published'
+        )
+        ->groupBy( 'year', 'month' )
+        ->orderByRaw( 'min(created_at) desc' )
+        ->get()
+        ->toArray();
+    }
 }

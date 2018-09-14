@@ -31,16 +31,7 @@ class PostsController extends Controller
                 ->get();
 
         // Get the Archives data:
-        $archives = Post::selectRaw
-        (
-            'year(created_at) as year,
-            monthname(created_at) as month,
-            count(*) as published'
-        )
-        ->groupBy( 'year', 'month' )
-        ->orderByRaw( 'min(created_at) desc' )
-        ->get()
-        ->toArray();
+        $archives = Post::archives();
 
         return view('index', compact('posts', 'archives'));
     }
