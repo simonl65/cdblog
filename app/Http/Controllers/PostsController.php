@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Carbon\Carbon;
 
 class PostsController extends Controller
 {
@@ -21,8 +22,35 @@ class PostsController extends Controller
     public function index()
     {
         // Render any existing blog posts:
-        $posts = Post::latest()->get();
-        return view('index', compact('posts'));
+        // $posts = Post::latest()->get();
+
+        // Render relevant blog posts (according to querystring if present):
+        $posts = Post::latest();
+
+        if( $month = request('month') ) {
+            $posts->whereMonth('created_at', Carbon::parse($month)->month);
+        }
+
+        if( $year = request('year') ) {
+            $posts->whereYear('created_at', $year);
+        }
+
+        $posts = $posts->get();
+
+
+        // Get the Archives data:
+        $archives = Post::selectRaw
+        (
+            'year(created_at) as year,
+            monthname(created_at) as month,
+            count(*) as published'
+        )
+        ->groupBy( 'year', 'month' )
+        ->orderByRaw( 'min(created_at) desc' )
+        ->get()
+        ->toArray();
+
+        return view('index', compact('posts', 'archives'));
     }
 
     /**
