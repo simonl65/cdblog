@@ -21,9 +21,6 @@ class PostsController extends Controller
      */
     public function index()
     {
-        // Render any existing blog posts:
-        // $posts = Post::latest()->get();
-
         // Render relevant blog posts (according to querystring if present):
         // (NOTE: "filter" is a scoped query we created in Post.php model)
         $posts = Post::latest()
@@ -32,8 +29,6 @@ class PostsController extends Controller
 
         // Get the Archives data:
         $archives = Post::archives();
-        // ?? No longer needed as it's called via a view composer in
-        // app/Providers/AppServiceProvider.php/boot
 
         return view('index', compact('posts', 'archives'));
     }
