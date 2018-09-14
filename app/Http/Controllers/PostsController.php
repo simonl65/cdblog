@@ -25,18 +25,10 @@ class PostsController extends Controller
         // $posts = Post::latest()->get();
 
         // Render relevant blog posts (according to querystring if present):
-        $posts = Post::latest();
-
-        if( $month = request('month') ) {
-            $posts->whereMonth('created_at', Carbon::parse($month)->month);
-        }
-
-        if( $year = request('year') ) {
-            $posts->whereYear('created_at', $year);
-        }
-
-        $posts = $posts->get();
-
+        // (NOTE: "filter" is a scoped query we created in Post.php model)
+        $posts = Post::latest()
+                ->filter( request(['month', 'year']) )
+                ->get();
 
         // Get the Archives data:
         $archives = Post::selectRaw
