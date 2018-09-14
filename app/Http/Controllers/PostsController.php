@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Repositories\Posts;
 use Carbon\Carbon;
 
 class PostsController extends Controller
@@ -19,13 +20,15 @@ class PostsController extends Controller
     /**
      * GET /posts
      */
-    public function index()
+    public function index(Posts $posts)
     {
+        dd($posts);
         // Render relevant filtered blog posts (according to querystring):
         // (NOTE: "filter" is a scoped query we created in Post.php model)
-        $posts = Post::latest()
-                ->filter( request(['month', 'year']) )
-                ->get();
+        // $posts = Post::latest()
+        //         ->filter( request(['month', 'year']) )
+        //         ->get();
+        $posts = $posts->all();
 
         return view('index', compact('posts'));
     }
