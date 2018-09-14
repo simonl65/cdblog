@@ -21,16 +21,13 @@ class PostsController extends Controller
      */
     public function index()
     {
-        // Render relevant blog posts (according to querystring if present):
+        // Render relevant filtered blog posts (according to querystring):
         // (NOTE: "filter" is a scoped query we created in Post.php model)
         $posts = Post::latest()
                 ->filter( request(['month', 'year']) )
                 ->get();
 
-        // Get the Archives data:
-        $archives = Post::archives();
-
-        return view('index', compact('posts', 'archives'));
+        return view('index', compact('posts'));
     }
 
     /**
