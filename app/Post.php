@@ -56,7 +56,7 @@ class Post extends Model
     /**
      * Grab the archives data:
      */
-    public static function Archives()
+    public static function archives()
     {
         return static::selectRaw
         (

@@ -32,6 +32,8 @@ class PostsController extends Controller
 
         // Get the Archives data:
         $archives = Post::archives();
+        // ?? No longer needed as it's called via a view composer in
+        // app/Providers/AppServiceProvider.php/boot
 
         return view('index', compact('posts', 'archives'));
     }
