@@ -58,7 +58,11 @@ class PostsController extends Controller
         $this->validate(request(), [
             'title' => 'required|min:3',
             'body'  => 'required|min:10|max:65534'
-        ]);
+        ],
+        [
+            'title.required' => 'Please provide a title.'
+        ]
+        );
 
         // Save post to database:
         Post::create([
@@ -68,6 +72,6 @@ class PostsController extends Controller
         ]);
 
         // Redirect to the home page:
-        return redirect('/posts');
+        return redirect('/posts')->with('success', 'Post created.');
     }
 }
