@@ -50,7 +50,7 @@ class RegistrationController extends Controller
         auth()->login( $user );
 
         // Send welcome email:
-        \Mail::to($user)->send(new Welcome($user));
+        \Mail::to($user)->send(new WelcomeAgain($user));
 
         // Redirect:
         // return redirect()->home();
