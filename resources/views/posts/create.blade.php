@@ -12,13 +12,18 @@
 
     <div class="form-group">
         <label for="title">Post title</label>
-        <input type="text" class="form-control" id="title" name="title" aria-describedby="titleHelp">
-        <small id="etitleHelp" class="form-text text-muted">Keep it short now!</small>
+        <input type="text" class="form-control {{( $errors->first('title') ) ? 'is-invalid' : ''}}" id="title" name="title" aria-describedby="titleHelp" value="{{old('title')}}">
+        @if ($errors->has('title'))
+            <span class="text-danger">{{ $errors->first('title') }}</span>
+        @endif
     </div>
 
     <div class="form-group">
         <label for="body">Post body</label>
-        <textarea class="form-control" id="body" name="body" rows="10"></textarea>
+    <textarea class="form-control {{( $errors->first('body') ) ? 'is-invalid' : ''}}" id="body" name="body" rows="10">{{old('body')}}</textarea>
+        @if ($errors->has('body'))
+            <span class="text-danger">{{ $errors->first('body') }}</span>
+        @endif
     </div>
 
     <div class="form-group">
