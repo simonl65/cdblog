@@ -4,7 +4,7 @@
 {!! $post->body !!}
 
 <hr> {{-- Show any comments --}}
-<h3 class="muted">Comments:</h3>
+<h3 class="text-muted">Comments:</h3>
 
 <div class="comments">
     @if(count($post->comments))
@@ -16,7 +16,7 @@
         @endforeach
     </ul>
     @else
-    <p class="lead">No comments yet.</p>
+    <p class="">No comments yet.</p>
     @endif
 </div>
 
