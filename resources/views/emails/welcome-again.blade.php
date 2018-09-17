@@ -18,6 +18,10 @@ Go there
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos eligendi hic dicta alias cupiditate, laborum maiores beatae laudantium veniam officia.
 @endcomponent
 
+@component('mail::promotion')
+    This is a promotion?
+@endcomponent
+
 Thanks,<br>
 {{ config('app.name') }}
 @endcomponent
