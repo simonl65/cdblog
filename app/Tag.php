@@ -15,4 +15,14 @@ class Tag extends Model
     {
         return $this->belongsToMany(Post::class);
     }
+
+
+    /**
+     * Override default return value (usually 'id').
+     * We want /posts/tags/<tag_name>
+     */
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
 }

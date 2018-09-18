@@ -20,7 +20,7 @@ class PostsController extends Controller
     /**
      * GET /posts
      */
-    public function index(Posts $posts)
+    public function index()
     {
         // Render relevant filtered blog posts (according to querystring):
         // (NOTE: "filter" is a scoped query we created in Post.php model)
@@ -29,7 +29,7 @@ class PostsController extends Controller
                 ->get();
         // $posts = $posts->all();
 
-        return view('index', compact('posts'));
+        return view('posts.index', compact('posts'));
     }
 
     /**
