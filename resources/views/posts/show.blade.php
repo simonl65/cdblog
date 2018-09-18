@@ -2,7 +2,17 @@
 @section('content')
 
 <h1>{{ $post->title }}</h1>
+
 {!! $post->body !!}
+
+{{-- Show tags --}}
+@if (count($post->tags))
+    <hr>
+    @foreach( $post->tags as $tag )
+        <a href="/posts/tags/{{ $tag->name }}" class="badge badge-primary">{{ $tag->name }}</a>
+    @endforeach
+@endif
+
 <hr> {{-- Show any comments --}}
 <h3 class="text-muted">Comments:</h3>
 

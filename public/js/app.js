@@ -13879,7 +13879,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(12);
-module.exports = __webpack_require__(43);
+module.exports = __webpack_require__(44);
 
 
 /***/ }),
@@ -13909,7 +13909,7 @@ var app = new Vue({
   el: '#app'
 });
 
-__webpack_require__(48);
+__webpack_require__(43);
 
 /***/ }),
 /* 13 */
@@ -47412,16 +47412,6 @@ if (false) {
 /* 43 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */
-/***/ (function(module, exports) {
-
 function doFlash() {
     var messages = document.querySelector('#flashMessages');
 
@@ -47431,6 +47421,12 @@ function doFlash() {
 }
 
 window.addEventListener ? window.addEventListener("load", doFlash, false) : window.attachEvent && window.attachEvent("onload", doFlash);
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

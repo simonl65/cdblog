@@ -19,7 +19,11 @@ class AppServiceProvider extends ServiceProvider
         (
             'partials.sidebar',
             function( $view ) {
+                // Get all archives:
                 $view->with( 'archives', \App\Post::archives() );
+
+                // Get all tags (as long as they have an associated post):
+                $view->with('tags', \App\Tag::has('posts')->pluck('name'));
             }
         );
     }
