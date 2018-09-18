@@ -10477,6 +10477,42 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+/* FLASH MESSAGES
+ *************************************/
+
+#flashMessages {
+  position: absolute;
+  z-index: 10;
+  left: 50vw;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 40%;
+  -webkit-animation: flash-message 10s forwards;
+          animation: flash-message 10s forwards;
+}
+
+@-webkit-keyframes flash-message {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes flash-message {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
 /* stylelint-disable selector-list-comma-newline-after */
 
 html {

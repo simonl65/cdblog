@@ -49,6 +49,7 @@ class SessionsController extends Controller
     public function destroy()
     {
         auth()->logout();
+        session()->flash('success', "You're now logged out.");
         return redirect('/posts');
     }
 }

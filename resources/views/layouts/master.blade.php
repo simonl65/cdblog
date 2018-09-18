@@ -22,16 +22,20 @@
 <body>
 
     <div id="page_header" class="container">
-    @include('partials.header') @yield('jumbotron') @yield('featuredPosts')
-
+        @include('partials.header')
+        @include('partials.messages')
+        @yield('jumbotron')
+        @yield('featuredPosts')
     </div>
+
+
 
     <main role="main" class="container">
         <div class="row">
             <div class="col-md-8 blog-main">
                 @yield('content')
             </div>
-    @include('partials.sidebar')
+            @include('partials.sidebar')
         </div>
         <!-- /.row -->
     </main>
@@ -58,6 +62,7 @@
             text: 'Thumbnail'
         });
     </script>
+    <script src="/js/app.js"></script>
 </body>
 
 </html>

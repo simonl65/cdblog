@@ -13909,6 +13909,8 @@ var app = new Vue({
   el: '#app'
 });
 
+__webpack_require__(48);
+
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -47411,6 +47413,24 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */
+/***/ (function(module, exports) {
+
+function doFlash() {
+    var messages = document.querySelector('#flashMessages');
+
+    setTimeout(function () {
+        messages.remove();
+    }, 3000);
+}
+
+window.addEventListener ? window.addEventListener("load", doFlash, false) : window.attachEvent && window.attachEvent("onload", doFlash);
 
 /***/ })
 /******/ ]);

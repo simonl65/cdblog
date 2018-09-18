@@ -33,6 +33,8 @@ class RegistrationController extends Controller
         // Save user details to database, log the user in, then email them:
         $form->persist();
 
+        session()->flash('message', 'Thanks for the sign-up!');
+
         // Redirect:
         // return redirect()->home();
         return redirect('/posts');

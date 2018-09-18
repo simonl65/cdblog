@@ -1,0 +1,13 @@
+#flashMessages {
+    position : absolute;
+    z-index  : 10;
+    left     : 50vw;
+    transform: translate(-50%, -50%);
+    width    : 40%;
+    animation: flash-message 10s forwards;
+}
+
+@keyframes flash-message {
+    0%   {opacity: 1;}
+    100% {opacity: 0; display:none;}
+}
