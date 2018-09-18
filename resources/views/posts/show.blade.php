@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('content')
+
 <h1>{{ $post->title }}</h1>
 {!! $post->body !!}
-
 <hr> {{-- Show any comments --}}
 <h3 class="text-muted">Comments:</h3>
 

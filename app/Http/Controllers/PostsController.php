@@ -22,7 +22,6 @@ class PostsController extends Controller
      */
     public function index(Posts $posts)
     {
-        // dd($posts);
         // Render relevant filtered blog posts (according to querystring):
         // (NOTE: "filter" is a scoped query we created in Post.php model)
         $posts = Post::latest()
