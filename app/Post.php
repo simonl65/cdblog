@@ -69,4 +69,15 @@ class Post extends Model
         ->get()
         ->toArray();
     }
+
+
+    /**
+     * Get tags associated with a post:
+     *
+     * Any post may have many tags
+     */
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }
