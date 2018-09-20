@@ -3,7 +3,9 @@
 
 <h1>{{ $post->title }}</h1>
 
-{!! $post->body !!}
+<div id="post-body">
+    {!! $post->body !!}
+</div>
 
 {{-- Show tags --}}
 @if (count($post->tags))

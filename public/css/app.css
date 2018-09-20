@@ -10668,6 +10668,10 @@ h6 {
   color: #999;
 }
 
+#post-body {
+  white-space: pre-line;
+}
+
 /*
 * Footer
 */
